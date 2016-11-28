@@ -1,3 +1,47 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout>
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    <app-menu></app-menu>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    {{title}}
+
+    <span class="fill-remaining-space"></span>
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+
+    <md-menu x-position="before" #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>settings</md-icon>
+        <span>Settings</span>
+      </button>
+      <button md-menu-item disabled> 
+        <md-icon>account_circle</md-icon>
+        <span>Sign Out</span>
+      </button>
+    </md-menu>
+  </md-toolbar>
+
+
+  <div class="app-content">
+    <md-card>
+      Basic Card.
+      <button md-raised-button>RAISED</button>
+    </md-card>
+    <md-card>
+      Basic Card.
+    </md-card>
+    <md-list>
+      <md-list-item>
+        <p md-line>
+          OK
+        </p>
+      </md-list-item>
+    </md-list>
+  </div>
+</md-sidenav-layout>
