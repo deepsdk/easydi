@@ -1,3 +1,19 @@
-<p>
-  input works!
-</p>
+<div class="dragArea" 
+    (drop)="readFile($event.dataTransfer.files[0]); isDragOver=false; false" 
+    (dragover)="isDragOver=true; false" 
+    (dragleave)="isDragOver=false; false" 
+    [class.over]="isDragOver">
+  <div class="dragAreaLabel">
+    <p>Drop file here</p>
+    <p>or</p>
+    <a (click)="onChooseFile()">
+      <p>choose a file</p>
+    </a>
+  </div>
+</div>
+<input #realChooseFile type="file" accept="image/*" 
+    (change)="readFile($event.target.files[0]); false">
+<div *ngIf="inputImageSrc">
+  <p>Preview:</p>
+  <img #imageViewer [src]="inputImageSrc" />
+</div>

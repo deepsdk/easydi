@@ -1,0 +1,22 @@
+.dragArea {
+  border: 3px dashed #eee;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.dragArea.over {
+  border-color: #999;
+}
+.dragArea a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+input[type=file]{
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+img {
+  width: 100%;
+}
