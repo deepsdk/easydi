@@ -75,7 +75,3 @@ md-sidenav-layout.m2app-dark {
 .fill-remaining-space {
   flex: 1 1 auto;
 }
-
-.md-card {
-  margin-bottom: 2px;
-}

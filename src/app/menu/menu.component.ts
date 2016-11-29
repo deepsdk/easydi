@@ -13,8 +13,8 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.menus = [
-      {name: "Imagenet"},
-      {name: "Segmentation"},
+      {name: "Imagenet", url: "/imagenet"},
+      {name: "Segmentation", url: "/segmentation"},
     ];
   }
 
