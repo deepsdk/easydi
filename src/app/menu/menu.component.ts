@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from "../menu";
+
+import { MenuGroup } from "../menu-group";
 
 @Component({
   selector: 'app-menu',
@@ -7,14 +8,24 @@ import { Menu } from "../menu";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  menus: Menu[];
+  menuGroups: MenuGroup[];
 
   constructor() { }
 
   ngOnInit() {
-    this.menus = [
-      {name: "Imagenet", url: "/imagenet"},
-      {name: "Segmentation", url: "/segmentation"},
+    this.menuGroups = [
+      {
+        name: "Classification",
+        menus: [
+          {name: "Imagenet Models", url: "/imagenet"},
+        ]
+      },
+      {
+        name: "Segmentation",
+        menus: [
+          {name: "Imagenet Models", url: "/imagenet"},
+        ]
+      },
     ];
   }
 
