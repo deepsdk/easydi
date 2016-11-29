@@ -7,9 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
-import { ModelComponent } from './model/model.component';
 import { ImagenetComponent } from './imagenet/imagenet.component';
 import { MenuComponent } from './menu/menu.component';
+import { ResultRankComponent } from './result-rank/result-rank.component';
 
 const routes: Routes = [
   {
@@ -23,9 +23,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     InputComponent,
-    ModelComponent,
     ImagenetComponent,
-    MenuComponent
+    MenuComponent,
+    ResultRankComponent
   ],
   imports: [
     BrowserModule,

@@ -4,15 +4,14 @@
   <app-input></app-input>
 </md-card>
 
-<md-card *ngFor="let model of models">
-  <md-card-subtitle>{{model.category}}</md-card-subtitle>
-  <md-card-title>{{model.name}}</md-card-title> 
-  <md-grid-list cols="2">
-    <md-grid-tile>
-      <p>{{model.name}}</p>
-    </md-grid-tile>
-    <md-grid-tile>
-      <p>result</p>
-    </md-grid-tile>
-  </md-grid-list>
+<md-card>
+  <md-card-title>Results</md-card-title> 
+
+  <md-list>
+    <div *ngFor="let model of models; let i = index;">
+      <md-divider *ngIf="i > 0"></md-divider>
+      <h3 md-subheader>{{model.name}}</h3>
+      <app-result-rank></app-result-rank>
+    </div>
+  </md-list>
 </md-card>
