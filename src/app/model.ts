@@ -1,5 +1,5 @@
 export class Model {
   name: string;
-  category: string;
-  description: string;
+  shortName: string;
+  origin: string;
 }

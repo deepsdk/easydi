@@ -1,9 +1,10 @@
 <md-list>
   <div *ngFor="let mg of menuGroups; let i = index;">
     <md-divider *ngIf="i > 0"></md-divider>
-    <h3 md-subheader>{{mg.name}}</h3>
 
-    <md-list-item *ngFor="let menu of mg.menus" [routerLink]="[menu.url]">
+    <md-list-item [routerLink]="mg.path">{{mg.name}}</md-list-item>
+
+    <md-list-item *ngFor="let menu of mg.menus" pageScroll [href]="menu.anchor">
       <h3 md-line>{{menu.name}}</h3>
     </md-list-item>
   </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/core';
 
+import { DeepapiService } from "../deepapi.service";
+
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -12,7 +14,8 @@ export class InputComponent implements OnInit {
   inputImageSrc: string;
   isDragOver: boolean = false;
 
-  constructor(private renderer: Renderer) { }
+  constructor(private renderer: Renderer, 
+              private deepapiService: DeepapiService) { }
 
   ngOnInit() {
   }
@@ -31,5 +34,9 @@ export class InputComponent implements OnInit {
     let reader = new FileReader();
     reader.onload = () => this.inputImageSrc = reader.result;
     reader.readAsDataURL(file);
+
+    this.deepapiService.getUrl(file.name)
+      .subscribe(url => console.log(url),
+                 err => console.log(err));
   }
 }

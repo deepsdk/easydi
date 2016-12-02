@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ImagenetComponent } from './imagenet.component';
+import { ClassificationComponent } from './classification.component';
 
-describe('ImagenetComponent', () => {
-  let component: ImagenetComponent;
-  let fixture: ComponentFixture<ImagenetComponent>;
+describe('ClassificationComponent', () => {
+  let component: ClassificationComponent;
+  let fixture: ComponentFixture<ClassificationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImagenetComponent ]
+      declarations: [ ClassificationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImagenetComponent);
+    fixture = TestBed.createComponent(ClassificationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

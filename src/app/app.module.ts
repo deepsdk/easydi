@@ -5,16 +5,21 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
+
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
-import { ImagenetComponent } from './imagenet/imagenet.component';
+import { ClassificationComponent } from './classification/classification.component';
 import { MenuComponent } from './menu/menu.component';
 import { ResultRankComponent } from './result-rank/result-rank.component';
 
+import { ModelService } from "./model.service";
+import { DeepapiService } from "./deepapi.service";
+
 const routes: Routes = [
   {
-    path: "imagenet",
-    component: ImagenetComponent, 
+    path: "classification",
+    component: ClassificationComponent, 
   },
 ];
 
@@ -23,7 +28,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     InputComponent,
-    ImagenetComponent,
+    ClassificationComponent,
     MenuComponent,
     ResultRankComponent
   ],
@@ -33,8 +38,9 @@ const routes: Routes = [
     HttpModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes),
+    Ng2PageScrollModule.forRoot(),
   ],
-  providers: [],
+  providers: [ModelService, DeepapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
